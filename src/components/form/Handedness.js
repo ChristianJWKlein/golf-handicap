@@ -10,9 +10,7 @@ export default function Handedness({ handedness, setHandedness }) {
             setHandedness(e.target.value)
           }}
         />
-        <span className='block text-center text-2xl my-4'>
-          ${parseInt(handedness).toLocaleString()}
-        </span>
+        <span className='block text-center text-2xl my-4'>{handedness}</span>
       </div>
     </>
   )

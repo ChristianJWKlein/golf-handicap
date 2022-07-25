@@ -10,9 +10,7 @@ export default function Nickname({ nickname, setNickname }) {
             setNickname(e.target.value)
           }}
         />
-        <span className='block text-center text-2xl my-4'>
-          ${parseInt(nickname).toLocaleString()}
-        </span>
+        <span className='block text-center text-2xl my-4'>{nickname}</span>
       </div>
     </>
   )

@@ -13,14 +13,16 @@ const scoreValues = [
 export default function EnterScores({ scores, setScores }) {
   return (
     <div className='flex flex-col font-cabinet'>
-      <p className='font-bold text-2xl mb-8'>Where would you like to work?</p>
+      <p className='font-bold text-2xl mb-8'>
+        Enter your last 20 scores of 18 Hole golf
+      </p>
       {scoreValues.map((choice) => {
         return (
           <label
             key={choice.id}
             className={
               scores.includes(choice.name)
-                ? 'flex items-center px-4 py-2 bg-green-100 rounded-md mb-4'
+                ? 'flex items-center px-4 py-2 bg-green-600 rounded-md mb-4'
                 : 'flex items-center bg-slate-100 px-4 py-2 rounded-md mb-4'
             }
           >
