@@ -1,22 +1,49 @@
 const scoreValues = [
-  { id: 1, score: 97 },
-  { id: 2, score: 87 },
-  { id: 3, score: 84 },
+  { id: 1, score: 90 },
+  { id: 2, score: 90 },
+  { id: 3, score: 90 },
   { id: 4, score: 90 },
-  { id: 5, score: 89 },
-  { id: 6, score: 77 },
-  { id: 7, score: 88 },
-  { id: 8, score: 72 },
-  { id: 9, score: 101 },
+  { id: 5, score: 90 },
+  { id: 6, score: 90 },
+  { id: 7, score: 90 },
+  { id: 8, score: 90 },
+  { id: 9, score: 90 },
 ]
 
 export default function EnterScores({ scores, setScores }) {
+  const handleSliderChange = (scoreValues) => {
+    setScores(scoreValues)
+  }
+
   return (
     <div className='flex flex-col font-cabinet'>
       <p className='font-bold text-2xl mb-8'>
-        Enter your last 20 scores of 18 Hole golf
+        Enter your last 10 scores of 18 Hole golf
       </p>
-      {scoreValues.map((choice) => {
+      {scoreValues.map((sliderVal) => {
+        return (
+          <label
+            key={scoreValues.id}
+            className='flex items-center bg-slate-100 px-4 py-2 rounded-md mb-4'
+          >
+            <input
+              className='slider w-full h-2 rounded-xl bg-green-200 text-green-400 appearance-none'
+              type='range'
+              value={scores}
+              step={1}
+              min={50}
+              max={130}
+              onChange={(e) => {
+                setScores(sliderVal)
+              }}
+            />
+            <span className='block text-center text-2xl my-4'>{scores}</span>
+            {/* {sliderVal} */}
+          </label>
+        )
+      })}
+
+      {/* {scoreValues.map((choice) => {
         return (
           <label
             key={choice.id}
@@ -77,7 +104,7 @@ export default function EnterScores({ scores, setScores }) {
             {choice.score}
           </label>
         )
-      })}
+      })} */}
     </div>
   )
 }
