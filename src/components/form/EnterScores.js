@@ -21,12 +21,12 @@ export default function EnterScores({ scores, setScores }) {
           <label
             key={choice.id}
             className={
-              scores.includes(choice.name)
-                ? 'flex items-center px-4 py-2 bg-green-600 rounded-md mb-4'
+              scores.includes(choice.score)
+                ? 'flex items-center px-4 py-2 bg-lime-200 rounded-md mb-4'
                 : 'flex items-center bg-slate-100 px-4 py-2 rounded-md mb-4'
             }
           >
-            {scores.includes(choice.name) ? (
+            {scores.includes(choice.score) ? (
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-4 w-4'
@@ -58,23 +58,23 @@ export default function EnterScores({ scores, setScores }) {
               </svg>
             )}
             <input
-              //key={choice.id}
+              key={choice.id}
               type='checkbox'
               className='mr-4 appearance-none'
-              value={choice.name}
-              checked={scores.includes(choice.name)}
-              name={choice.name}
+              value={choice.score}
+              checked={scores.includes(choice.score)}
+              name={choice.score}
               onChange={() => {
-                if (scores.includes(choice.name)) {
-                  scores.splice(scores.indexOf(choice.name), 1)
+                if (scores.includes(choice.score)) {
+                  scores.splice(scores.indexOf(choice.score), 1)
                   setScores([...scores])
                 } else {
-                  scores.push(choice.name)
+                  scores.push(choice.score)
                   setScores([...scores])
                 }
               }}
             />
-            {choice.name}
+            {choice.score}
           </label>
         )
       })}
