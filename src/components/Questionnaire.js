@@ -8,7 +8,7 @@ import Handedness from './form/Handedness'
 
 export default function Questionnaire() {
   const [step, setStep] = useState(1)
-  const [scores, setScores] = useState([])
+  const [scores, setScores] = useState({})
   const [nickname, setNickname] = useState('')
   const [handedness, setHandedness] = useState('')
 
@@ -21,7 +21,7 @@ export default function Questionnaire() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setStep(step + 1)
   }
-
+  //
   const handleFormSubmit = () => {
     //   fetch("https://jobify-fk.uk.r.appspot.com/jobs/filtered", {
     //     method: "POST",
