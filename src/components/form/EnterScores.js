@@ -11,8 +11,12 @@ const scoreValues = [
 ]
 
 export default function EnterScores({ scores, setScores }) {
-  const handleSliderChange = (scoreValues) => {
-    setScores(scoreValues)
+  const handleSliderChange = (e) => {
+    const { name, value } = e.target
+    setScores({
+      ...scores,
+      [name]: value,
+    })
   }
 
   return (
@@ -23,22 +27,22 @@ export default function EnterScores({ scores, setScores }) {
       {scoreValues.map((sliderVal) => {
         return (
           <label
-            key={scoreValues.id}
+            key={sliderVal.id}
             className='flex items-center bg-slate-100 px-4 py-2 rounded-md mb-4'
           >
             <input
               className='slider w-full h-2 rounded-xl bg-green-200 text-green-400 appearance-none'
               type='range'
               value={scores}
+              //value={scores}
               step={1}
               min={50}
               max={130}
-              onChange={(e) => {
-                setScores(sliderVal)
-              }}
+              onChange={handleSliderChange}
             />
-            <span className='block text-center text-2xl my-4'>{scores}</span>
-            {/* {sliderVal} */}
+            {/* <span className='block text-center text-2xl my-4'>{sliderVal}</span> */}
+            {sliderVal.score}
+            {/* {scores.score} */}
           </label>
         )
       })}
