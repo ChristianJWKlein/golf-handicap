@@ -41,15 +41,17 @@ export default function EnterScores({ scores, setScores }) {
               className='slider w-full h-2 rounded-xl bg-green-200 text-green-400 appearance-none'
               type='range'
               value={scores}
-              //value={scores}
               step={1}
               min={50}
               max={130}
               onChange={handleSliderChange}
             />
             {/* <span className='block text-center text-2xl my-4'>{sliderVal}</span> */}
-            {sliderVal.score}
+            {/* {sliderVal.score} */}
             {/* {scores.score} */}
+            <span className='block text-center text-2xl my-4'>
+              ${parseInt(scores.score).toLocaleString()}
+            </span>
           </label>
         )
       })}
