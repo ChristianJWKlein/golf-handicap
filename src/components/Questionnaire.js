@@ -8,7 +8,17 @@ import Handedness from './form/Handedness'
 
 export default function Questionnaire() {
   const [step, setStep] = useState(1)
-  const [scores, setScores] = useState({})
+  const [scores, setScores] = useState([
+    { id: 1, score: 90 },
+    { id: 2, score: 90 },
+    { id: 3, score: 90 },
+    { id: 4, score: 90 },
+    { id: 5, score: 90 },
+    { id: 6, score: 90 },
+    { id: 7, score: 90 },
+    { id: 8, score: 90 },
+    { id: 9, score: 90 },
+  ])
   const [nickname, setNickname] = useState('')
   const [handedness, setHandedness] = useState('')
 

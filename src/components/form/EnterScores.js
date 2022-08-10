@@ -15,7 +15,8 @@ export default function EnterScores({ scores, setScores }) {
   //
   // console.log(scoreValues)
 
-  console.log(scores)
+  //console.log(scores)
+  let fakeScores = scores
 
   //This works to update score values.
   const handleSliderChange = (e) => {
@@ -31,7 +32,7 @@ export default function EnterScores({ scores, setScores }) {
       <p className='font-bold text-2xl mb-8'>
         Enter your last 10 scores of 18 Hole golf
       </p>
-      {scoreValues.map((sliderVal) => {
+      {fakeScores.map((sliderVal) => {
         return (
           <label
             key={sliderVal.id}
@@ -40,7 +41,7 @@ export default function EnterScores({ scores, setScores }) {
             <input
               className='slider w-full h-2 rounded-xl bg-green-200 text-green-400 appearance-none'
               type='range'
-              value={scores}
+              value={fakeScores}
               step={1}
               min={50}
               max={130}
@@ -50,7 +51,7 @@ export default function EnterScores({ scores, setScores }) {
             {/* {sliderVal.score} */}
             {/* {scores.score} */}
             <span className='block text-center text-2xl my-4'>
-              ${parseInt(scores.score).toLocaleString()}
+              {parseInt(scores?.score).toLocaleString()}
             </span>
           </label>
         )
