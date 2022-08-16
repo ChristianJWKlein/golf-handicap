@@ -11,7 +11,7 @@ export default function Questionnaire() {
   const [scores, setScores] = useState([
     { id: 1, score: 90 },
     { id: 2, score: 90 },
-    { id: 3, score: 90 },
+    { id: 3, score: 100 },
     { id: 4, score: 90 },
     { id: 5, score: 90 },
     { id: 6, score: 90 },
