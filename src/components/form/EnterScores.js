@@ -19,14 +19,18 @@ export default function EnterScores({ scores, setScores }) {
   //let fakeScores = scores
 
   //This works to update score values.
+  // const handleSliderChange = (e) => {
+  //   const { id, value } = e.target
+  //   setScores([
+  //     {
+  //       ...scores,
+  //       [id]: value,
+  //     },
+  //   ])
+  // }
+
   const handleSliderChange = (e) => {
-    const { id, value } = e.target
-    setScores([
-      {
-        ...scores,
-        [id]: value,
-      },
-    ])
+    scores.score = e.target.value
   }
 
   return (
@@ -52,10 +56,11 @@ export default function EnterScores({ scores, setScores }) {
             />
             {/* <span className='block text-center text-2xl my-4'>{sliderVal}</span> */}
             {/* {sliderVal.score} */}
-            {/* {scores.score} */}
+
             <span className='block text-center text-2xl my-4'>
               {/* {parseInt(scores?.score).toLocaleString()} */}
               {/* {scores?.score} */}
+              {/* {sliderVal.score} */}
             </span>
             {scores?.score}
           </label>
