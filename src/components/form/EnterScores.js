@@ -9,7 +9,7 @@ const scoreValues = [
   { id: 8, score: 90 },
   { id: 9, score: 90 },
 ]
-
+//consider storing all form values in a form values object
 export default function EnterScores({ scores, setScores }) {
   //set scores to scoreValues, but change scoreValues to an object only. maybe.
   //
