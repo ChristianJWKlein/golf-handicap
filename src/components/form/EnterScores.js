@@ -36,7 +36,7 @@ export default function EnterScores({ scores, setScores }) {
   return (
     <div className='flex flex-col font-cabinet'>
       <p className='font-bold text-2xl mb-8'>
-        Enter your last 10 scores of 18 Hole golf
+        Enter your last 10 scores of golf
       </p>
       {scores.map((sliderVal) => {
         return (
